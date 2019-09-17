@@ -1,0 +1,33 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: provider
+  datasource:
+    username: root
+    password: root
+    #    url: jdbc:mysql://localhost:3306/flea?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/flea?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#设置服务注册中心地址
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true #注册服务的时候使用服务的IP地址
+
+#mybaties
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*/*.xml,classpath*:mapper/*.xml
+  type-aliases-package: org.flea.provider.bean
+  configuration:
+    #识别驼峰命名的字段对应
+    map-underscore-to-camel-case: true
+
+#日志
+logging:
+  level:
+    org.flea.provider.dao: debug

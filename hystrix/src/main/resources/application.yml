@@ -1,0 +1,25 @@
+server:
+  port: 8500
+
+spring:
+  application:
+    name: hystrix
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true
+
+# http://localhost:8500/actuator/hystrix.stream 可以监控请求数据
+# http://localhost:8500/hystrix 可以看到可视化界面，输入上面的监控节点地址
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream'
