@@ -10,6 +10,7 @@
         <module name="eurekaclient" />
         <module name="eurekaserver" />
         <module name="feign" />
+        <module name="githubconfigserver" />
         <module name="hystrix" />
         <module name="nativeconfigclient" />
         <module name="nativeconfigserver" />
@@ -24,6 +25,7 @@
       <module name="eurekaserver" options="-parameters" />
       <module name="feign" options="-parameters" />
       <module name="firstspringcloud" options="-parameters" />
+      <module name="githubconfigserver" options="-parameters" />
       <module name="hystrix" options="-parameters" />
       <module name="nativeconfigclient" options="-parameters" />
       <module name="nativeconfigserver" options="-parameters" />
